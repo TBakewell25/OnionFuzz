@@ -18,10 +18,9 @@ BINS = $(BIN_DIR)/OnionFuzz
 # Targets
 all: $(BINS)
 
-$(BIN_DIR)/crc16: $(BIN_DIR)/hash.o $(OBJ)
+$(BIN_DIR)/OnionFuzz: $(BIN_DIR)/main.o $(OBJ)
 	$(CC) -o $@ $^ $(LDFLAGS)
 
-$(BIN_DIR)/dictionary: $(BIN_DIR)/dictionary.o $(OBJ)
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 $(BIN_DIR)/%.o: $(SRC_DIR)/%.c
